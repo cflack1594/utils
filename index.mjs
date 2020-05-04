@@ -1,0 +1,1 @@
+export const getAvg = numbers => (numbers.reduce((adder, currentNum) => (adder += currentNum))) / numbers.length
