@@ -1,44 +1,30 @@
-export const getAvg = numbers => (numbers.reduce((adder, currentNum) => (adder += currentNum))) / numbers.length
 export const Calculator = {
-  adder(nums) {
-    let sum = 0;
-
-    for (let i in nums) {
-      sum += nums[i];
-    }
-
-    return sum;
+  adder(numbers) {
+    return numbers.reduce((sum, currentNum) => (sum += currentNum))
   },
 
-  multiplier(nums) {
-    let product = 1;
-
-    for (let i in nums) {
-      product *= nums[i];
-    }
-    return product;
+  multiplier(numbers) {
+    return numbers.reduce((product, currentNum) => (product *= currentNum))
   },
 
-  subtractor(num1, num2) {
-    return num1 - num2;
+  subtractor(numbers) {
+    return numbers.reduce((difference, currentNum) => (difference -= currentNum))
   },
 
-  divider(num1, num2) {
-    return num1 / num2;
+  divider(numbers) {
+    return numbers.reduce((dividend, currentNum) => (dividend /= currentNum))
   },
 
-  getMax(nums) {
-    let max = nums[0];
-
-    for (let i in nums) {
-      if (nums[i] > max) max = nums[i];
-    }
-
-    return max;
+  getAvg(numbers) {
+      return this.adder(numbers)/numbers.length
   },
 
-  testEvenOdd(num) {
-    if (num % 2 === 0) return "Even";
+  getMax(numbers) {
+    return numbers.reduce((max, currentNum) => {if(currentNum > max) max = currentNum});
+  },
+
+  testEvenOdd(number) {
+    if (number % 2 === 0) return "Even";
     else return "Odd";
   }
 };
