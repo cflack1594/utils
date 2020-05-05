@@ -28,3 +28,8 @@ export const Calculator = {
     else return "Odd";
   }
 };
+
+//takes in an email or website and returns the domain i.e. ".com"
+export const getTLD = url => {
+    return url.slice(url.lastIndexOf('.'))
+}
